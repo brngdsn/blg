@@ -2,5 +2,7 @@
 
 angular.module('cleanBlogApp')
   .controller('BlogCreateCtrl', function ($scope) {
-    $scope.message = 'Hello';
+   $scope.onSubmit = function() {
+    console.log($scope.image)
+   };
   });
