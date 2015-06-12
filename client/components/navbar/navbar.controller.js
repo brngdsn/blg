@@ -4,7 +4,7 @@ angular.module('cleanBlogApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
       'title': 'Home',
-      'link': '/blog/home/posts?n=3'
+      'link': '/blog/home/posts'
     },{
       'title': 'About',
       'link': '/blog/about'
