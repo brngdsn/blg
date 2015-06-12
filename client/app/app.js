@@ -10,7 +10,7 @@ angular.module('cleanBlogApp', [
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
-      .otherwise('/blog/home/posts?n=3');
+      .otherwise('/blog/home/posts');
 
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
