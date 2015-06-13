@@ -10,7 +10,7 @@ angular.module('cleanBlogApp')
         var file = event.target.files[0];
         var reader = new FileReader();
         reader.onload = function (levent) {
-          scope.post = {};
+          scope.post = scope.post || {};
           scope.post.image = levent.target.result,
           scope.$apply();
         };
