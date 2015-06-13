@@ -8,16 +8,27 @@ var PostSchema = new Schema({
   subTitle: String,
   author: String,
   created: { type: Date, default: Date.now },
-  image: {
-    src: Buffer,
-    type: String
-  },
-  images: [{
-    src: Buffer,
-    type: String
-  }],
+  image: String,
+  images: [String],
   body: String
 });
+
+/*PostSchema
+  .virtual('imageSrc')
+  .get(function(){
+    return {
+      'image': this.image.binary.buffer.toString()
+    };
+  })*/
+
+/*PostSchema
+  .virtual('image')
+  .get(function(){
+    return {
+      'image': this.image.data.toString()
+    };
+  })
+;*/
 
 PostSchema
   .virtual('preview')

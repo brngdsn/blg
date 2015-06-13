@@ -22,6 +22,7 @@ exports.show = function(req, res) {
 
 // Creates a new post in the DB.
 exports.create = function(req, res) {
+  req.body.author = req.user.name;
   Post.create(req.body, function(err, post) {
     if(err) { return handleError(res, err); }
     return res.json(201, post);
