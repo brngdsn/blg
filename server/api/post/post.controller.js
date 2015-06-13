@@ -5,7 +5,7 @@ var Post = require('./post.model');
 
 // Get list of posts
 exports.index = function(req, res) {
-  Post.find(function (err, posts) {
+  Post.find({}, {}, { sort: { 'created': -1 } }, function (err, posts) {
     if(err) { return handleError(res, err); }
     //posts.forEach(function(){console.log(arguments[0])})
     return res.json(200, posts);

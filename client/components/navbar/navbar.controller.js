@@ -5,13 +5,13 @@ angular.module('cleanBlogApp')
     $scope.menu = [{
       'title': 'Home',
       'link': '/blog/home/posts'
-    },{
+    }/*,{
       'title': 'About',
       'link': '/blog/about'
     },{
       'title': 'Contact',
       'link': '/blog/contact'
-    }];
+    }*/];
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;

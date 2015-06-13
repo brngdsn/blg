@@ -6,6 +6,7 @@ angular.module('cleanBlogApp')
       $http.post('/api/posts',$scope.post)
         .success(function(success){
           $scope.success = success;
+          $state.go('blog.posts',{ id: success._id })
         })
         .error(function(error){
           $scope.error = error;
