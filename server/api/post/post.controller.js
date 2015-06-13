@@ -7,6 +7,7 @@ var Post = require('./post.model');
 exports.index = function(req, res) {
   Post.find(function (err, posts) {
     if(err) { return handleError(res, err); }
+    //posts.forEach(function(){console.log(arguments[0])})
     return res.json(200, posts);
   });
 };
