@@ -5,7 +5,22 @@ var Post = require('./post.model');
 
 // Get list of posts
 exports.index = function(req, res) {
-  Post.find({}, {}, { sort: { 'created': -1 } }, function (err, posts) {
+  var skip = 0;
+  var limit = 3;
+  if (req.query.skip === 'undefined') {
+    skip = 0;
+  } else {
+    skip = req.query.skip;
+  }
+  
+  if (req.query.limit === 'undefined') {
+    limit = 3;
+  } else {
+    limit = req.query.limit;
+  }
+
+
+  Post.find({}, {}, { skip: skip, limit: limit, sort: { 'created': -1 } }, function (err, posts) {
     if(err) { return handleError(res, err); }
     //posts.forEach(function(){console.log(arguments[0])})
     return res.json(200, posts);
