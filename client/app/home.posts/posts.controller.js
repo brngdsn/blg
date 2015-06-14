@@ -3,6 +3,9 @@
 angular.module('cleanBlogApp')
   .controller('PostsCtrl', function ($scope, $http, $stateParams) {
     $scope.busy = true;
+    $scope.format = function(d) {
+      return new Date(d).getTime();
+    };
     if ($stateParams.skip === 'undefined' || !($stateParams.skip > 0)) {
       $scope.skip = 0;
     } else {

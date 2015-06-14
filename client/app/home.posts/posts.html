@@ -12,7 +12,7 @@
                           {{post.subTitle}}
                         </h3>
                     </a>
-                    <p class="post-meta">Posted by <a href="#">{{post.author}}</a> on {{post.created}}</p>
+                    <p class="post-meta">Posted by <a href="#">{{post.author}}</a> on {{format(post.created) | date:'medium'}}</p>
                 </div>
                 <hr>
               </article>
