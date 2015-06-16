@@ -11,6 +11,7 @@ angular.module('cleanBlogApp', [
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
+      .when('/', '/blog/home/posts')
       .otherwise('/blog/home/posts');
 
     $locationProvider.html5Mode(true);
