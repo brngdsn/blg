@@ -6,10 +6,9 @@ angular.module('cleanBlogApp')
       return new Date(d).getTime();
     };
     $http.get('/api/posts/'+$stateParams.id)
-      .success(function(post){
-        $scope.post = post;
-      })
-      .error(function(error){
+      .then(function(post){
+        $scope.post = post.data;
+      }, function(error){
         $scope.error = error;
         throw new Error(error);
       })

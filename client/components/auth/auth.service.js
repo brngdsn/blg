@@ -24,13 +24,13 @@ angular.module('cleanBlogApp')
           email: user.email,
           password: user.password
         }).
-        success(function(data) {
-          $cookieStore.put('token', data.token);
+        then(function(data) {
+          console.log(data.data.token)
+          $cookieStore.put('token', data.data.token);
           currentUser = User.get();
           deferred.resolve(data);
           return cb();
-        }).
-        error(function(err) {
+        }, function(err) {
           this.logout();
           deferred.reject(err);
           return cb(err);
