@@ -28,7 +28,7 @@ angular.module('cleanBlogApp')
           console.log(data.data.token)
           $cookieStore.put('token', data.data.token);
           currentUser = User.get();
-          deferred.resolve(data);
+          deferred.resolve(data.data);
           return cb();
         }, function(err) {
           this.logout();
